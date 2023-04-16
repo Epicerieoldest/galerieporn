@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>galeries</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script>
+		function toggleHeart(element) {
+			if (element.classList.contains("fa-heart")) {
+				element.classList.remove("fa-heart");
+				element.classList.add("fa-heart-o");
+				element.style.color = "black";
+			} else {
+				element.classList.remove("fa-heart-o");
+				element.classList.add("fa-heart");
+				element.style.color = "red";
+			}
+		}
+
+		window.onload = function() {
+			setTimeout(function() {
+				var images = document.querySelectorAll(".item img");
+				for (var i = 0; i < images.length; i++) {
+					images[i].style.opacity = "0";
+				}
+			}, 2000);
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Galerie d'images</h1>
+	</header>
+	<section class="gallery">
+		<div class="grid">
+			<div class="item">
+				<img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/c50c714f-cb1f-fb7a-c84a-898c8d42adba.jpeg" alt="Image 1">
+				<div class="overlay">
+					<i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+					<p>Chocolat baby </p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/fb4f696c-22d1-99d7-cd31-f2848e21a237.jpeg" alt="Image 2">
+				<div class="overlay">
+					<i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+					<p>Description de l'image 2</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/8a34c21b-3612-7c2c-0d9b-fc950436cdde.jpeg" alt="Image 3">
+				<div class="overlay">
+					<i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+					<p>Description de l'image 3</p>
+				</div>
+			</div>
+			<!-- Ajouter plus d'images ici -->
+		</div>
+	</section>
+	<footer>
+		<p><a href="#">Pour voir plus d'images </a><i class="fa fa-arrow-right" style="color: red;"> Connectez-vous </i></p>
+		<p>© 2023 Ma galerie d'images</p>
+	</footer>
+	<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</body>
+</html>
